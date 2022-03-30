@@ -58,8 +58,8 @@ while play:
 		if dealer_hand.value < player_hand.value or dealer_hand.value > 21:
 			print("Player wins!")
 			wins += 1
-			if player_hand.check_blackjack():
-				balance += bet*3/2
+			if player_hand.value == 21 and player_hand.check_blackjack():
+				balance += bet+bet*3/2
 				print("BLACKJACK!")
 			else:
 				balance += bet*2
