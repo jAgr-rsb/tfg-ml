@@ -35,8 +35,8 @@ def main():
 		player_hand.set_hand_value()
 		
 		print("Dealers hand:")
-		print("HIDDEN CARD")
 		print(dealer_hand.cards[0])
+		print("HIDDEN CARD")
 		print("------------------------")
 		player_hand.show_hand(False)
 	
@@ -58,11 +58,10 @@ def main():
 				playing_hand = False
 	
 		if not busted:
+			count = count + count_card(dealer_hand.cards[-1]) #cuenta la segunda carta
 			while dealer_hand.value < 17:
 				dealer_hand.deal(shoe,1)
-				count = count + count_card(dealer_hand.cards[-1])
-			#for card in range(1,len(dealer_hand.cards)):
-				#count = count + count_card(dealer_hand.cards[card]) #cuenta las cartas restantes del dealer
+				count = count + count_card(dealer_hand.cards[-1]) #cuenta las siguientes cartas
 			dealer_hand.show_hand(True)
 			print("Player hand value:",player_hand.value)
 			print("\n")
