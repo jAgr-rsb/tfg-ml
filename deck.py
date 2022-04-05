@@ -26,11 +26,10 @@ class Deck(object):
         ace_count = 0
         total = 0
         for x in self.cards:
-            carta = x
             if x.value == "ACE":
                 ace_count += 1
             else:
-                total += carta.get_card_value(x)
+                total += x.get_card_value(x)
         for x in range (ace_count):
             if (total+11) > 21:
                 total+=1
